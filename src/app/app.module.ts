@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { IscrizioneComponent } from './iscrizione/iscrizione.component';
 import { LoginComponent } from './login/login.component';
 
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
@@ -19,7 +21,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     AppRoutingModule,
     FontAwesomeModule
   ],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
