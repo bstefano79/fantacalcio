@@ -22,13 +22,10 @@ export class LoginComponent implements OnInit {
   public user : SocialUser | undefined;
 
   ngOnInit(): void {
-    console.log('user login fuori--> '+this.user);
     this.authService.authState.subscribe(user => {
-      console.log('user login --> '+user);
       this.user = user;
       if(user)
         this.router.navigate(['/']);
-      //console.log(user);
     });
   }
 

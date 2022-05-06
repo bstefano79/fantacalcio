@@ -14,18 +14,14 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    console.log('onint');
     this.authService.authState.subscribe(user => {
       this.user = user;
-      console.log(user);
     });
   }
 
   logout(): void{
-    //console.log('logout');
     if(this.user){
        this.authService.signOut();
-       //this.user = new SocialUser;
     }
   }
   
