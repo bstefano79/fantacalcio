@@ -25,9 +25,19 @@
         <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
       </form>
 
-      <div class="text-end">
+      <div *ngIf="!user" class="text-end">
         <button type="button" class="btn btn-outline-light me-2" (click)="router.navigateByUrl('/login');">Login</button>
         <button type="button" class="btn btn-warning" (click)="router.navigateByUrl('/iscriviti');">Iscriviti</button>
+      </div>
+      <div *ngIf="user" class="dropdown text-end">
+        <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+          <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+        </a>
+        <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+          <li><a class="dropdown-item" href="#">Home</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a (click)="logout()" class="dropdown-item" href="#">Logout</a></li>
+        </ul>
       </div>
     </div>
   </div>
