@@ -1,5 +1,5 @@
 import { SocialAuthService, SocialUser } from '@abacritt/angularx-social-login';
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,21 +8,25 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
-  public user : SocialUser | undefined;
+  
+  user: SocialUser;
+
 
   constructor(public router: Router,private authService: SocialAuthService) {
+    
   }
-
-  ngOnInit(): void {
+  
+  ngOnInit() {
     this.authService.authState.subscribe(user => {
       this.user = user;
     });
   }
 
+
   logout(): void{
-    if(this.user){
+    if(this.user){     
        this.authService.signOut();
-    }
+      }
   }
   
   title = 'fantacalcio';

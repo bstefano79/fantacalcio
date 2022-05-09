@@ -12,14 +12,17 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
+  user: SocialUser;
+
   constructor(private authService: SocialAuthService, private router: Router) { }
 
-  public faUser = faUser;
-  public faKey = faKey;
-  public faFacebookSquare = faFacebookSquare;
-  public faGooglePlusSquare = faGooglePlusSquare;
+  faUser = faUser;
+  faKey = faKey;
+  faFacebookSquare = faFacebookSquare;
+  faGooglePlusSquare = faGooglePlusSquare;
+  GoogleLoginProvider = GoogleLoginProvider;
 
-  public user : SocialUser | undefined;
+
 
   ngOnInit(): void {
     this.authService.authState.subscribe(user => {
