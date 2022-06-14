@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  domain: 'localhost',
   clinetIdGoogle: '544389676696-gqrogm8tmg0kk3smilt24vqc9phmg48k.apps.googleusercontent.com'
 };
 

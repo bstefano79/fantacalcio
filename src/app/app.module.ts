@@ -8,9 +8,27 @@ import { LoginComponent } from './login/login.component';
 
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
+import {NgcCookieConsentModule, NgcCookieConsentConfig} from 'ngx-cookieconsent';
+
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from '@abacritt/angularx-social-login';
+import { GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from '@abacritt/angularx-social-login';
 import { environment } from 'src/environments/environment';
+
+const cookieConfig:NgcCookieConsentConfig = {
+  cookie: {
+    domain: environment.domain
+  },
+  palette: {
+    popup: {
+      background: '#000'
+    },
+    button: {
+      background: '#f1d600'
+    }
+  },
+  theme: 'edgeless',
+  type: 'opt-out'
+};
 
 @NgModule({
   declarations: [
@@ -22,7 +40,8 @@ import { environment } from 'src/environments/environment';
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
-    SocialLoginModule
+    SocialLoginModule,
+    NgcCookieConsentModule.forRoot(cookieConfig)
   ],
   providers: [
     {provide: LocationStrategy, useClass: HashLocationStrategy},
