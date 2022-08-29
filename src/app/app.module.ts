@@ -13,6 +13,7 @@ import {NgcCookieConsentModule, NgcCookieConsentConfig} from 'ngx-cookieconsent'
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from '@abacritt/angularx-social-login';
 import { environment } from 'src/environments/environment';
+import { HomeComponent } from './home/home.component';
 
 const cookieConfig:NgcCookieConsentConfig = {
   cookie: {
@@ -34,7 +35,8 @@ const cookieConfig:NgcCookieConsentConfig = {
   declarations: [
     AppComponent,
     IscrizioneComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
