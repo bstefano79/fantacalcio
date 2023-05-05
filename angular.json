@@ -113,5 +113,7 @@
       }
     }
   },
-  "defaultProject": "fantacalcio"
+  "cli": {
+    "analytics": "9179f532-a529-4e2f-95a7-a175d4633c28"
+  }
 }
